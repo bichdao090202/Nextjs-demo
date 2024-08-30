@@ -1,14 +1,10 @@
 'use client'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import {useState} from "react";
-import Count from "@/app/screen5/count";
 
 export default function Search(){
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
-    const [count, setCount] = useState(0);
-
     function handleSearch(term){
         const params = new URLSearchParams(searchParams);
         if (term) {
@@ -28,15 +24,6 @@ export default function Search(){
                 }}
                    defaultValue={searchParams.get('query')?.toString()}
             />
-
-            <button
-                onClick={()=>setCount(count + 1)}
-            >
-                Click
-            </button>
-
-            <Count count={count}/>
-
         </div>
     )
 }
