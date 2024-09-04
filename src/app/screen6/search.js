@@ -1,7 +1,11 @@
+
+
 'use client'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import {useState} from "react";
 
 export default function Search(){
+    const [searchId, setSearchId] = useState('');
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
@@ -16,14 +20,17 @@ export default function Search(){
     }
 
     return (
-        <div>
+        <div className="flex flex-row justify-center items-center w-full">
             <input type={'text'} placeholder={'Search...'}
-                   className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+                   className="w-2/3 peer block rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
                    onChange={(e) => {
-                       handleSearch(e.target.value);
+                       setSearchId(e.target.value);
                    }}
-                   defaultValue={searchParams.get('query')?.toString()}
+                   // defaultValue={searchParams.get('query')?.toString()}
             />
+            <button className="w-20"
+                onClick={()=>handleSearch(searchId)}
+            >Search</button>
         </div>
     )
 }

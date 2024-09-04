@@ -11,7 +11,7 @@ export default async function Page({ searchParams }) {
 
     return (
         <div>
-            <h1>Search and paging</h1>
+            <h1>Search and paging with path params</h1>
             <Suspense>
                 <Search/>
                 <Paging/>

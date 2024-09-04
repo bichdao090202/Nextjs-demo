@@ -26,10 +26,10 @@ export default function Page() {
 
     return (
         <div className="flex flex-col bg-gray-50 items-center">
-            <h1>Test template, layout, child component in a page</h1>
+            <h1><i>Test template, layout, child component in a page</i></h1>
             <LoginText/>
             {username}
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center">
                 <input type="text" className="w-56 h-8 border-2" placeholder="username" onChange={(e) => setUsername(e.target.value)} />
                 <input type="password" className=" w-56 h-8 border-2 mt-2" placeholder="password"  />
                 <button className="mt-6 w-32 h-12 bg-emerald-500" onClick={()=>handleLogin()}>Login</button>
@@ -49,6 +49,9 @@ export default function Page() {
                 </Link>
                 <Link href='/screen5'>
                     <button className="mt-6 w-32 h-12 bg-emerald-600">Screen 5</button>
+                </Link>
+                <Link href='/screen6'>
+                    <button className="mt-6 w-32 h-12 bg-emerald-600">Screen 6</button>
                 </Link>
             </div>
         </div>

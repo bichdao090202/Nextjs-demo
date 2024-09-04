@@ -108,3 +108,5 @@ export default async function fetchAccounts() {
 fetchAccounts().then((data) => {
     console.log(data);
 });
+
+SSL certificate problem: unable to get local issuer certificate when push code github

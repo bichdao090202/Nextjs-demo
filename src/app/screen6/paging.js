@@ -11,16 +11,18 @@ export default function Paging() {
         params.set('page', pageNumber.toString());
         replace(`${pathname}?${params.toString()}`);
     };
-
+    const listPageNumber = [1,2,3,4,5,6,7,8,8,9,10]
     return (
-        <div>
-            <select
-                onChange={(e) => {
-                    createPageURL(e.target.value);
-                }}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-            </select>
+        <div className="group-row">
+            {listPageNumber.map((pageNumber,index) => (
+                <button className="w-5" key={index}
+                        onClick={(e) => {
+                            createPageURL(pageNumber);
+                        }}
+                >
+                    {pageNumber}
+                </button>
+            ))}
         </div>
     )
 }

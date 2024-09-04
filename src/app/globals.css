@@ -40,3 +40,25 @@ button {
 input{
   @apply m-1
 }
+
+.group-row{
+  @apply flex flex-row justify-center items-center border-gray-50 w-screen
+}
+
+.api-path{
+  @apply text-blue-700 italic w-1/3
+
+}
+
+.api-description {
+  @apply font-bold w-1/5
+}
+
+.api-example {
+  @apply italic text-gray-600 w-1/3
+}
+
+.text-bold{
+  @apply font-bold text-xl
+}
+
